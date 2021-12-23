@@ -12,7 +12,7 @@ captcha = StringVar()
 input = StringVar()
 cap_label = Label(root, text = 'CAPTCHA LENGTH', font = 'arial 10 bold').pack()
 cap_len = IntVar()
-length = Spinbox(root, from_ = 8, to_ = 32 , textvariable = cap_len , width = 15).pack()
+length = Spinbox(root, from_ = 4, to_ = 32 , textvariable = cap_len , width = 15).pack()
 #####define function
 pass_str = StringVar()
 def Generator():
@@ -35,7 +35,7 @@ def check():
         messagebox.showerror('Captcha Verification', 'Incorrect Captcha')
     input.set('')
     Generator()
-Label(root, textvariable=captcha, font="ariel 16 bold").pack(padx=5, pady=5)
+Label(root, textvariable=pass_str, font="ariel 16 bold").pack(padx=5, pady=5)
 Entry(root, textvariable=input, bg='white', font="ariel 12 bold").pack(padx=5, pady=5)
 Button(root, text="Check", font="ariel 15 bold", bg='gold', command=check).pack(padx=5, pady=5)
 Generator()
