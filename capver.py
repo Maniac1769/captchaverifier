@@ -23,11 +23,7 @@ def Generator():
         captcha = captcha+random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation)
     pass_str.set(captcha)
 Button(root, text = "GENERATE CAPTCHA" , command = Generator ).pack(pady= 5)
-Entry(root , textvariable = pass_str).pack()
 ########function to copy
-def Copy_captcha():
-    pyperclip.copy(pass_str.get())
-Button(root, text = 'COPY TO CLIPBOARD', command = Copy_captcha).pack(pady=5)
 def check():
     if pass_str.get() == input.get():
         messagebox.showinfo('Captcha Verification', 'Captcha verified Succesfully..')
